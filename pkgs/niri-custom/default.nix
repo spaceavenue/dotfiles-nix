@@ -14,8 +14,10 @@ rustPlatform.buildRustPackage rec {
   };
 
   cargoLock = {
-    allowBuiltinFetchGit = true;
     lockFile = ./Cargo.lock;
+    outputHashes = {
+      "smithay-0.7.0" = "sha256-2aurK1dZAD49FTYURzZuQkBM07woZB/rNymF0fuSbR8=";
+    };
   };
 
   strictDeps = true;
