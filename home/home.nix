@@ -132,15 +132,15 @@
     "xdg-desktop-portal".source = ./dotfiles/xdg-desktop-portal;
     "btop/themes".source = ./dotfiles/btop/themes;
     "ripgrep".source = ./dotfiles/ripgrep;
+    "rmpc".source = ./dotfiles/rmpc;
     "ov".source = ./dotfiles/ov;
     "satty".source = ./dotfiles/satty;
     "swaylock".source = ./dotfiles/swaylock;
     "fnott".source = ./dotfiles/fnott;
     "yt-dlp".source = ./dotfiles/yt-dlp;
-
     "wgetrc".source = ./dotfiles/wgetrc;
     "user-dirs.dirs".source = ./dotfiles/user-dirs.dirs;
-
+    "zed/themes".source = ./dotfiles/zed/themes;
     "electron-flags.conf".source = ./dotfiles/electron-flags.conf;
     "signal-desktop-flags.conf".source = ./dotfiles/electron-flags.conf;
     "vesktop-flags.conf".source = ./dotfiles/electron-flags.conf;
