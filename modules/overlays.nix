@@ -36,8 +36,8 @@
     qoz        = rustPackage ../pkgs/qoz { };
     imv-custom = final.callPackage ../pkgs/imv-custom { };
     ttf-ibm-plex-custom  = final.callPackage ../pkgs/ttf-ibm-plex-custom { };
-    yt-dlp-ejs           = final.callPackage ../pkgs/yt-dlp-ejs { };
     ttc-iosevka-collection = final.callPackage ../pkgs/ttc-iosevka-collection { };
+    yt-dlp = prev.yt-dlp.override { jsRuntime = final.quickjs; };
     clang-mold = final.callPackage ../pkgs/clang-mold { };
     })
 ]

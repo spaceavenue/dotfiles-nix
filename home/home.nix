@@ -109,25 +109,37 @@
   };
  
   xdg.configFile = {
-    # Stage 2: configs edited often enough that a rebuild-per-change would be
-    # annoying — symlinked to the live files in ./dotfiles/ via
-    # mkOutOfStoreSymlink instead of copied into the store, so edits land
-    # immediately and are just a `git commit` away, no rebuild needed. See
-    # chat, 2026-09-01.
     "niri".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/niri";
     "fish".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/fish";
     "helix".source  = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/helix";
     "waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/waybar";
     "yazi".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/yazi";
 
-    # Stage 1: static configs, rarely touched — plain store copies.
+    "bat".source = ./dotfiles/bat;
+    "cava".source = ./dotfiles/cava;
+    "clangd".source = ./dotfiles/clangd;
+    "eza".source = ./dotfiles/eza;
+    "fastfetch".source = ./dotfiles/fastfetch;
+    "foot".source = ./dotfiles/foot;
+    "fuzzel".source = ./dotfiles/fuzzel;
+    "gtk-3.0/settings.ini".source = ./dotfiles/gtk-3.0/settings.ini;
+    "gtk-3.0/gtk.css".source = ./dotfiles/gtk-3.0/gtk.css;
+    "gtk-4.0".source = ./dotfiles/gtk-4.0;
+    "mpd".source = ./dotfiles/mpd;
+    "mpv".source = ./dotfiles/mpv;
+    "rustidle".source = ./dotfiles/rustidle;
+    "udiskrs".source = ./dotfiles/udiskrs;
+    "xdg-desktop-portal".source = ./dotfiles/xdg-desktop-portal;
+    "btop/themes".source = ./dotfiles/btop/themes;
+    "ripgrep".source = ./dotfiles/ripgrep;
+    "ov".source = ./dotfiles/ov;
+    "satty".source = ./dotfiles/satty;
+    "swaylock".source = ./dotfiles/swaylock;
+    "fnott".source = ./dotfiles/fnott;
+    "yt-dlp".source = ./dotfiles/yt-dlp;
+
     "wgetrc".source = ./dotfiles/wgetrc;
     "user-dirs.dirs".source = ./dotfiles/user-dirs.dirs;
-    "ripgrep/config".source = ./dotfiles/ripgrep/config;
-    "ov/config.yaml".source = ./dotfiles/ov/config.yaml;
-    "satty/config.toml".source = ./dotfiles/satty/config.toml;
-    "swaylock/config".source = ./dotfiles/swaylock/config;
-    "fnott/fnott.ini".source = ./dotfiles/fnott/fnott.ini;
 
     "electron-flags.conf".source = ./dotfiles/electron-flags.conf;
     "signal-desktop-flags.conf".source = ./dotfiles/electron-flags.conf;

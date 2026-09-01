@@ -108,7 +108,6 @@
     qoz
     ttf-ibm-plex-custom
     ttc-iosevka-collection
-    yt-dlp-ejs
   ];
 
   systemd.tmpfiles.rules = [
