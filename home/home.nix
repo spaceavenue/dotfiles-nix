@@ -109,6 +109,18 @@
   };
  
   xdg.configFile = {
+    # Stage 2: configs edited often enough that a rebuild-per-change would be
+    # annoying — symlinked to the live files in ./dotfiles/ via
+    # mkOutOfStoreSymlink instead of copied into the store, so edits land
+    # immediately and are just a `git commit` away, no rebuild needed. See
+    # chat, 2026-09-01.
+    "niri".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/niri";
+    "fish".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/fish";
+    "helix".source  = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/helix";
+    "waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/waybar";
+    "yazi".source   = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/home/dotfiles/yazi";
+
+    # Stage 1: static configs, rarely touched — plain store copies.
     "wgetrc".source = ./dotfiles/wgetrc;
     "user-dirs.dirs".source = ./dotfiles/user-dirs.dirs;
     "ripgrep/config".source = ./dotfiles/ripgrep/config;

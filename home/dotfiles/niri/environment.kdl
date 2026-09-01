@@ -1,0 +1,20 @@
+// Turn xwayland-satellite off.
+// Technically environment related? I guess?
+// xwayland-satellite { off; }
+
+environment {
+  // unset display
+  // can set selectively for xwayland programs
+  DISPLAY null
+
+  // for wayland compat 
+  // (idk how many are useful/needed)
+  MOZ_ENABLE_WAYLAND "1"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  QT_QPA_PLATFORM "wayland"
+  SDL_VIDEODRIVER "wayland"
+  _JAVA_AWT_WM_NONREPARENTING "1"
+
+  // qt theming
+  QT_QPA_PLATFORMTHEME "gtk3"
+}
