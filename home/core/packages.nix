@@ -15,6 +15,5 @@
     keepassxc
     syncthing
     nautilus
-    beets
   ];
 }

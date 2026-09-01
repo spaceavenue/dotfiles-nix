@@ -37,5 +37,6 @@
     ./apps/electron-flags.nix
     ./apps/rust.nix
     ./apps/git.nix
+    ./apps/beets.nix
   ];
 }
