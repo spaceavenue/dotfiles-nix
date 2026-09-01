@@ -45,6 +45,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.sanya = import ./home/home.nix;
+            home-manager.backupFileExtension = "bak";
           }
         ];
       };

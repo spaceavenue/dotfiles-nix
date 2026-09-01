@@ -52,6 +52,7 @@ stdenv.mkDerivation rec {
     ];
 
   mesonFlags = [ "-Dtest=disabled" "-Dwindows=wayland" ];
+  env.NIX_CFLAGS_COMPILE = "-march=native -O3";
 
   meta = {
     description = "Command line image viewer intended for use with tiling window managers, with qoz support";

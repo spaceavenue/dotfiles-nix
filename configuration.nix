@@ -43,21 +43,63 @@
 
 
   environment.systemPackages = with pkgs; [
-    bat btop claude-code duf 
-    dust eza fastfetch fd
-    ffmpeg ffmpegthumbnailer foot fuzzel 
-    fzf git delta github-cli
-    glow hyperfine imagemagick kid3 
-    lazygit libqalculate mpv neovim 
-    ntfs3g openssh ouch ov 
-    oxipng pavucontrol perlPackages.ImageExifTool playerctl 
-    powertop ripgrep satty sd 
-    smartmontools trash-cli umu-launcher vulkan-tools 
-    waybar wev wf-recorder which 
-    xeyes xwayland-satellite yazi yt-dlp 
-    zoxide rustup fish gnupg 
-    libnotify efibootmgr cliphist pinentry-curses 
-    twemoji-color-font clang-mold
+    bat 
+    btop 
+    claude-code 
+    duf 
+    dust 
+    eza 
+    fastfetch 
+    fd
+    ffmpeg 
+    ffmpegthumbnailer 
+    foot 
+    fuzzel 
+    fzf 
+    git 
+    delta 
+    github-cli 
+    glow 
+    hyperfine 
+    imagemagick 
+    kid3 
+    lazygit 
+    libqalculate 
+    mpv 
+    ntfs3g 
+    openssh 
+    ouch 
+    ov 
+    oxipng 
+    pavucontrol 
+    perlPackages.ImageExifTool 
+    playerctl 
+    powertop 
+    ripgrep 
+    satty 
+    sd 
+    smartmontools 
+    trash-cli 
+    umu-launcher 
+    vulkan-tools 
+    waybar 
+    wev 
+    wf-recorder 
+    which 
+    xeyes 
+    xwayland-satellite 
+    yazi 
+    yt-dlp 
+    zoxide 
+    rustup 
+    fish 
+    gnupg 
+    libnotify 
+    efibootmgr 
+    cliphist 
+    pinentry-curses 
+    twemoji-color-font 
+    clang-mold
     # custom packages
     wtype-custom
     swaylock-time

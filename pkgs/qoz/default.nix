@@ -16,6 +16,7 @@ rustPlatform.buildRustPackage rec {
   };
   postPatch = "cp ${./Cargo.lock} Cargo.lock";
   buildInputs = [ dav1d ];
+  env.RUSTFLAGS = "-C target-cpu=native";
 
   postInstall = ''
     install -Dm644 qoz-c/qoz.h "$out/include/qoz.h"

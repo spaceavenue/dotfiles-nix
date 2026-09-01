@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  import 
   home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
@@ -27,6 +26,7 @@
     cava
     rmpc
     beets
+    helix
   ];
 
   services.pipewire.enable = true;
@@ -106,5 +106,20 @@
       ListenStream = "127.0.0.1:6600";
     };
     Install.WantedBy = [ "sockets.target" ];
+  };
+ 
+  xdg.configFile = {
+    "wgetrc".source = ./dotfiles/wgetrc;
+    "user-dirs.dirs".source = ./dotfiles/user-dirs.dirs;
+    "ripgrep/config".source = ./dotfiles/ripgrep/config;
+    "ov/config.yaml".source = ./dotfiles/ov/config.yaml;
+    "satty/config.toml".source = ./dotfiles/satty/config.toml;
+    "swaylock/config".source = ./dotfiles/swaylock/config;
+    "fnott/fnott.ini".source = ./dotfiles/fnott/fnott.ini;
+
+    "electron-flags.conf".source = ./dotfiles/electron-flags.conf;
+    "signal-desktop-flags.conf".source = ./dotfiles/electron-flags.conf;
+    "vesktop-flags.conf".source = ./dotfiles/electron-flags.conf;
+    "obsidian/user-flags.conf".source = ./dotfiles/electron-flags.conf;
   };
 }

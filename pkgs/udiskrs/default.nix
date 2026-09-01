@@ -16,6 +16,7 @@ rustPlatform.buildRustPackage rec {
   };
   postPatch = "cp ${./Cargo.lock} Cargo.lock";
   buildInputs = [ udisks2 ];
+  env.RUSTFLAGS = "-C target-cpu=native";
 
   meta = {
     description = "UDisks2 mount manager";
