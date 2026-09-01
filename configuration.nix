@@ -50,14 +50,10 @@
     ffmpeg
     ffmpegthumbnailer
     fzf
-    git
-    delta
-    github-cli
     glow
     hyperfine
     imagemagick
     kid3
-    lazygit
     libqalculate
     ntfs3g
     openssh
@@ -78,7 +74,6 @@
     xeyes
     xwayland-satellite
     zoxide
-    rustup
     fish
     gnupg
     libnotify
