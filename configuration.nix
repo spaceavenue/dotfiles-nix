@@ -101,6 +101,7 @@
     twemoji-color-font 
     clang-mold
     # custom packages
+    imv-custom
     wtype-custom
     swaylock-time
     niri-custom
