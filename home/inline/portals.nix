@@ -1,0 +1,9 @@
+{
+  preferred = {
+    default = "gtk;";
+    "org.freedesktop.impl.portal.FileChooser" = "gnome;";
+    "org.freedesktop.impl.portal.GlobalShortcuts" = "gnome;";
+    "org.freedesktop.impl.portal.ScreenCast" = "gnome;";
+    "org.freedesktop.impl.portal.Screenshot" = "gnome;";
+  };
+}

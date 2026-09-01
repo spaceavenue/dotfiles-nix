@@ -1,0 +1,126 @@
+{
+  colourful = true;
+
+  filekinds = {
+    normal = { foreground = "#ffabab"; };
+    directory = { foreground = "#ffd1db"; };
+    symlink = { foreground = "#89b4fa"; };
+
+    block_device = { foreground = "#f38ba8"; };
+    char_device = { foreground = "#f38ba8"; };
+
+    pipe = { foreground = "#cba6f7"; };
+    socket = { foreground = "#cba6f7"; };
+
+    executable = { foreground = "#fab387"; };
+
+    mount_point = { foreground = "#ababff"; };
+    special = { foreground = "#cc99aa"; };
+  };
+
+  file_type = {
+    image = { foreground = "#ffd1db"; };
+    video = { foreground = "#f38ba8"; };
+
+    music = { foreground = "#cba6f7"; };
+    lossless = { foreground = "#cba6f7"; };
+
+    document = { foreground = "#89b4fa"; };
+    compressed = { foreground = "#89b4fa"; };
+
+    crypto = { foreground = "#cc99aa"; };
+    temp = { foreground = "#cc99aa"; };
+
+    compiled = { foreground = "#a6e3a1"; };
+    source = { foreground = "#eba0ac"; };
+  };
+
+  perms = {
+    user_read = { foreground = "#cba6f7"; is_bold = true; };
+    group_read = { foreground = "#b8a1e0"; };
+    other_read = { foreground = "#9a8bc4"; };
+
+    user_write = { foreground = "#f38ba8"; is_bold = true; };
+    group_write = { foreground = "#eb7a95"; };
+    other_write = { foreground = "#d4708a"; };
+
+    user_execute_file = { foreground = "#89b4fa"; is_bold = true; };
+    user_execute_other = { foreground = "#89b4fa"; is_bold = true; };
+    group_execute = { foreground = "#7aa3e0"; };
+    other_execute = { foreground = "#6b93cc"; };
+
+    special_user_file = { foreground = "#f5c2e7"; };
+    special_other = { foreground = "#89b4fa"; };
+    attribute = { foreground = "#cc99aa"; };
+  };
+
+  size = {
+    major = { foreground = "#ac798a"; };
+    minor = { foreground = "#89b4fa"; };
+
+    number_byte = { foreground = "#f38ba8"; };
+    number_kilo = { foreground = "#f38ba8"; };
+    number_mega = { foreground = "#f38ba8"; };
+    number_giga = { foreground = "#cba6f7"; };
+    number_huge = { foreground = "#cba6f7"; };
+
+    unit_byte = { foreground = "#f38ba8"; };
+    unit_kilo = { foreground = "#f38ba8"; };
+    unit_mega = { foreground = "#f38ba8"; };
+    unit_giga = { foreground = "#cba6f7"; };
+    unit_huge = { foreground = "#cba6f7"; };
+  };
+
+  users = {
+    user_you = { foreground = "#f5c2e7"; };
+    user_root = { foreground = "#f38ba8"; };
+    user_other = { foreground = "#89b4fa"; };
+
+    group_yours = { foreground = "#f5c2e7"; };
+    group_root = { foreground = "#f38ba8"; };
+    group_other = { foreground = "#89b4fa"; };
+  };
+
+  links = {
+    normal = { foreground = "#89b4fa"; };
+    multi_link_file = { foreground = "#cba6f7"; };
+  };
+
+  git = {
+    new = { foreground = "#a6e3a1"; };
+    modified = { foreground = "#fab387"; };
+    deleted = { foreground = "#f38ba8"; };
+    renamed = { foreground = "#89b4fa"; };
+    typechange = { foreground = "#cba6f7"; };
+    ignored = { foreground = "#cc99aa"; };
+    conflicted = { foreground = "#f38ba8"; is_bold = true; };
+  };
+
+  git_repo = {
+    branch_main = { foreground = "#ffd1db"; };
+    branch_other = { foreground = "#cba6f7"; };
+    git_clean = { foreground = "#a6e3a1"; };
+    git_dirty = { foreground = "#f38ba8"; };
+  };
+
+  security_context = {
+    colon = { foreground = "#cc99aa"; };
+    user = { foreground = "#ffd1db"; };
+    role = { foreground = "#cba6f7"; };
+    typ = { foreground = "#7f849c"; };
+    range = { foreground = "#f5c2e7"; };
+  };
+
+  header = { foreground = "#cba6f7"; };
+  date = { foreground = "#ddaabb"; };
+  punctuation = { foreground = "#cc99aa"; };
+  inode = { foreground = "#cc99aa"; };
+  blocks = { foreground = "#cc99aa"; };
+  octal = { foreground = "#f38ba8"; };
+  flags = { foreground = "#89b4fa"; };
+
+  symlink_path = { foreground = "#89b4fa"; };
+  control_char = { foreground = "#ffd1db"; };
+  broken_symlink = { foreground = "#f38ba8"; };
+  broken_path_overlay = { foreground = "#cc99aa"; };
+}

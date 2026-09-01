@@ -1,0 +1,100 @@
+''
+#![enable(implicit_some)]
+#![enable(unwrap_newtypes)]
+#![enable(unwrap_variant_newtypes)]
+(
+	theme: "main",
+  tabs: [
+    (
+      name: "Queue",
+      pane: Split(
+        direction: Horizontal,
+        panes: [
+          (
+            size: "60%",
+            borders: "ALL",
+            border_symbols: Rounded,
+            pane: Pane(AlbumArt)
+          ),
+          (
+            size: "40%",
+            borders: "ALL",
+            border_symbols: Rounded,
+            pane: Pane(Queue)
+          ),
+        ],
+      ),
+    ),
+    (
+      name: "Album Artists",
+      pane: Split(
+        direction: Vertical,
+        panes: [
+          (
+            size: "100%",
+            pane: Pane(AlbumArtists),
+            borders: "ALL",
+            border_symbols: Rounded
+          )
+        ]
+      )
+    ),
+    (
+      name: "Artists",
+      pane: Split(
+        direction: Vertical,
+        panes: [
+          (
+            size: "100%",
+            pane: Pane(Artists),
+            borders: "ALL",
+            border_symbols: Rounded
+          )
+        ]
+      )
+    ),
+    (
+      name: "Albums",
+      pane: Split(
+        direction: Vertical,
+        panes: [
+          (
+            size: "100%",
+            pane: Pane(Albums),
+            borders: "ALL",
+            border_symbols: Rounded
+          )
+        ]
+      )
+    ),
+    (
+      name: "Playlists",
+      pane: Split(
+        direction: Vertical,
+        panes: [
+          (
+            size: "100%",
+            pane: Pane(Playlists),
+            borders: "ALL",
+            border_symbols: Rounded
+          )
+        ]
+      )
+    ),
+    (
+      name: "Search",
+      pane: Split(
+        direction: Vertical,
+        panes: [
+          (
+            size: "100%",
+            pane: Pane(Search),
+            borders: "ALL",
+            border_symbols: Rounded
+          )
+        ]
+      )
+    ),
+  ],
+)
+''
