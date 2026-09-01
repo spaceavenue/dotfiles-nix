@@ -1,0 +1,7 @@
+{
+  xdg.configFile."rustidle/config".text = ''
+    timeout 170 notify-send -a "Rustidle" "Idle Imminent" "System will lock in 10s"
+    timeout 180 swaylock
+    timeout 180 niri msg action power-off-monitors
+  '';
+}

@@ -1,0 +1,5 @@
+{
+  xdg.configFile."wgetrc".text = ''
+    hsts-file = /home/sanya/.local/state/wget-hsts
+  '';
+}

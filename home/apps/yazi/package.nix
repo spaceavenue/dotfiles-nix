@@ -1,0 +1,10 @@
+{
+  plugin.deps = [
+    { use = "yazi-rs/plugins:full-border"; rev = "bb758e2"; hash = "7b625412411be411153886894d9acaf"; }
+    { use = "yazi-rs/plugins:mount"; rev = "bb758e2"; hash = "e3260d0b1feded8c8e3ae3afa1169e30"; }
+    { use = "yazi-rs/plugins:toggle-pane"; rev = "bb758e2"; hash = "15e5b67a241172cbb86b8fbf9e63692"; }
+    { use = "ndtoan96/ouch"; rev = "8e70ec7"; hash = "543eb6688a3c8eebe9d8f7d1ae0603a3"; }
+  ];
+
+  flavor.deps = [ ];
+}
