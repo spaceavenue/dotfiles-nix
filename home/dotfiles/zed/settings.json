@@ -1,0 +1,96 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": false,
+  "tab_size": 2,
+  "edit_predictions": {
+    "allow_data_collection": "no"
+  },
+  "agent_servers": {
+    
+  },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "cli_default_open_behavior": "existing_window",
+  "project_panel": {
+    "indent_guides": {
+      "show": "never",
+    },
+    "git_status_indicator": true,
+    "bold_folder_labels": false,
+    "dock": "left",
+  },
+  "selection_highlight": true,
+  "scrollbar": {
+    "git_diff": false,
+    "show": "auto",
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "word_diff_enabled": true,
+  "code_lens": "on",
+  "proxy": "",
+  "rounded_selection": true,
+  "semantic_tokens": "off",
+  "inlay_hints": {
+    "show_background": false,
+    "enabled": true,
+  },
+  "agent": {
+    "sidebar_side": "right",
+    "favorite_models": [],
+    "model_parameters": [],
+    "show_merge_conflict_indicator": false,
+  },
+  "window_decorations": "server",
+  "title_bar": {
+    "show_user_menu": false,
+    "show_menus": false,
+    "show_onboarding_banner": false,
+    "show_sign_in": false,
+  },
+  "toolbar": {
+    "selections_menu": false,
+    "quick_actions": false,
+    "breadcrumbs": false,
+    "agent_review": false,
+  },
+  "minimap": {
+    "show": "never",
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "terminal": {
+    "font_family": "Iosevka Term SS06",
+    "shell": {
+      "program": "/usr/bin/fish"
+    },
+    "max_scroll_history_lines": 10001,
+    "blinking": "on",
+    "cursor_shape": "underline",
+  },
+  "disable_ai": true,
+  "text_rendering_mode": "platform_default",
+  "ui_font_family": "Iosevka Etoile",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "base_keymap": "Zed",
+  "buffer_font_family": "Iosevka SS06",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
+  "theme": "Main",
+}
