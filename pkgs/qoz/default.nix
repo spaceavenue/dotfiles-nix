@@ -1,4 +1,9 @@
-{ lib, rustPlatform, fetchFromGitHub, dav1d }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  dav1d,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "qoz";

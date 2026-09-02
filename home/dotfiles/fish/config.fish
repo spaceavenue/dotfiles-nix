@@ -32,7 +32,3 @@ set -gx WGETRC "$XDG_CONFIG_HOME"/wgetrc
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME"/npm/npmrc
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME"/ripgrep/config
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME"/mariadb_history
-
-# aurutils actually opens a directory, so use yazi instead.
-set -gx AUR_PAGER $EDITOR
-set -gx AUR_PACMAN_AUTH doas

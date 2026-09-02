@@ -1,9 +1,20 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{
+  config,
+  lib,
+  modulesPath,
+  ...
+}:
 
 {
   imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "nvme"
+    "xhci_pci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
@@ -16,25 +27,49 @@
   fileSystems."/" = {
     device = "/dev/mapper/arch-linux";
     fsType = "btrfs";
-    options = [ "subvol=@" "compress=zstd:3" "noatime" "ssd" "space_cache=v2" "discard=async" ];
+    options = [
+      "subvol=@"
+      "compress=zstd:3"
+      "noatime"
+      "ssd"
+      "space_cache=v2"
+      "discard=async"
+    ];
   };
 
   fileSystems."/home" = {
     device = "/dev/mapper/arch-linux";
     fsType = "btrfs";
-    options = [ "subvol=@home" "compress=zstd:3" "noatime" "ssd" "space_cache=v2" "discard=async" ];
+    options = [
+      "subvol=@home"
+      "compress=zstd:3"
+      "noatime"
+      "ssd"
+      "space_cache=v2"
+      "discard=async"
+    ];
   };
 
   fileSystems."/media" = {
     device = "/dev/disk/by-uuid/67a29e4c-7ec3-4d77-8a24-47877ef3a9bc";
     fsType = "btrfs";
-    options = [ "subvol=@data" "compress=zstd:3" "noatime" "ssd" "space_cache=v2" "discard=async" ];
+    options = [
+      "subvol=@data"
+      "compress=zstd:3"
+      "noatime"
+      "ssd"
+      "space_cache=v2"
+      "discard=async"
+    ];
   };
 
   fileSystems."/swap" = {
     device = "/dev/mapper/arch-linux";
     fsType = "btrfs";
-    options = [ "subvol=@swap" "noatime" ];
+    options = [
+      "subvol=@swap"
+      "noatime"
+    ];
   };
 
   swapDevices = [

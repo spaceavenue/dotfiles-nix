@@ -5,7 +5,10 @@
 {
   services.pipewire.enable = true;
 
-  home.packages = [ pkgs.rustclip pkgs.cliphist ];
+  home.packages = [
+    pkgs.rustclip
+    pkgs.cliphist
+  ];
 
   systemd.user.services.cliphist = {
     Unit = {

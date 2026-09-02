@@ -6,6 +6,7 @@ in
 {
   home.packages = [ pkgs.eza ];
 
-  xdg.configFile."eza/theme.yml".source =
-    formats.yaml.generate "eza-theme.yml" (import ./eza-theme-data.nix);
+  xdg.configFile."eza/theme.yml".source = formats.yaml.generate "eza-theme.yml" (
+    import ./eza-theme-data.nix
+  );
 }

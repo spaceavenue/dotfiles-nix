@@ -1,4 +1,10 @@
-{ lib, stdenvNoCC, buildNpmPackage, fetchFromGitHub, go-toml, ttfautohint-nox }:
+{
+  lib,
+  buildNpmPackage,
+  fetchFromGitHub,
+  go-toml,
+  ttfautohint-nox,
+}:
 
 buildNpmPackage rec {
   pname = "ttc-iosevka-collection";
@@ -13,7 +19,10 @@ buildNpmPackage rec {
 
   npmDepsHash = "sha256-0+v+bMNL1QWuMRk3rQu8PRSeNJ459JVVhvnG1qlvty4=";
 
-  nativeBuildInputs = [ go-toml ttfautohint-nox ];
+  nativeBuildInputs = [
+    go-toml
+    ttfautohint-nox
+  ];
 
   strictDeps = true;
 

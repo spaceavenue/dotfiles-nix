@@ -1,6 +1,23 @@
-{ lib, rustPlatform, fetchFromGitHub, pkg-config, cairo, glib, libdisplay-info_0_3
-, libglvnd, libinput, libxkbcommon, libgbm, pango, pixman, seatd, pipewire
-, wayland, dbus, systemd }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  pkg-config,
+  cairo,
+  glib,
+  libdisplay-info_0_3,
+  libglvnd,
+  libinput,
+  libxkbcommon,
+  libgbm,
+  pango,
+  pixman,
+  seatd,
+  pipewire,
+  wayland,
+  dbus,
+  systemd,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "niri-custom";
@@ -28,32 +45,30 @@ rustPlatform.buildRustPackage rec {
     substituteInPlace resources/niri.service \
       --replace-fail 'niri' "$out/bin/niri"
   '';
-  
+
   # For some reason tests fail? will look into this later.
   doCheck = false;
 
-  nativeBuildInputs = 
-    [ 
-      pkg-config 
-      rustPlatform.bindgenHook 
-    ];
-  buildInputs = 
-    [ 
-      cairo
-      glib
-      libdisplay-info_0_3
-      libglvnd
-      libinput 
-      libxkbcommon 
-      libgbm 
-      pango 
-      pixman 
-      seatd 
-      pipewire 
-      wayland 
-      dbus 
-      systemd 
-    ];
+  nativeBuildInputs = [
+    pkg-config
+    rustPlatform.bindgenHook
+  ];
+  buildInputs = [
+    cairo
+    glib
+    libdisplay-info_0_3
+    libglvnd
+    libinput
+    libxkbcommon
+    libgbm
+    pango
+    pixman
+    seatd
+    pipewire
+    wayland
+    dbus
+    systemd
+  ];
 
   # Force linking with libEGL and libwayland-client so they end up in RPATH and
   # can be discovered by `dlopen()`

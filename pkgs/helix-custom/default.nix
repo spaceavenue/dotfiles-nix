@@ -1,5 +1,12 @@
-{ lib, rustPlatform, runCommand, installShellFiles, makeBinaryWrapper
-, tree-sitter-grammars, removeReferencesTo }:
+{
+  lib,
+  rustPlatform,
+  runCommand,
+  installShellFiles,
+  makeBinaryWrapper,
+  tree-sitter-grammars,
+  removeReferencesTo,
+}:
 
 let
   src = builtins.fetchGit {
@@ -13,9 +20,9 @@ let
   # Intersection of the grammars helix declares in its languages.toml and the ones nixpkgs happens
   # to package under the matching tree-sitter-<name> name. A handful newer/renamed grammars that
   # aren't in nixpkgs yet are skipped.
-  availableGrammars = lib.filterAttrs
-    (drvName: _: builtins.elem (lib.removePrefix "tree-sitter-" drvName) grammarNames)
-    tree-sitter-grammars;
+  availableGrammars = lib.filterAttrs (
+    drvName: _: builtins.elem (lib.removePrefix "tree-sitter-" drvName) grammarNames
+  ) tree-sitter-grammars;
 
   grammarsFarm = runCommand "helix-custom-grammars" { } (
     lib.concatMapAttrsStringSep "\n" (_: grammar: ''
@@ -38,7 +45,10 @@ rustPlatform.buildRustPackage {
 
   cargoLock.lockFile = "${src}/Cargo.lock";
 
-  nativeBuildInputs = [ installShellFiles makeBinaryWrapper ];
+  nativeBuildInputs = [
+    installShellFiles
+    makeBinaryWrapper
+  ];
 
   env = {
     HELIX_DISABLE_AUTO_GRAMMAR_BUILD = "1";

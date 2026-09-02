@@ -24,7 +24,10 @@ in
       red = "#cba6f7";
     };
     percent = {
-      type = [ "num" "num-color" ];
+      type = [
+        "num"
+        "num-color"
+      ];
       color = {
         green = "#cba6f7";
         yellow = "#cba6f7";
@@ -41,22 +44,59 @@ in
       format = "{#separator}╭{$1}╮${esc}[51D {#keys}{user-name}{#separator}@{#keys}{host-name} ";
       type = "title";
     }
-    { key = "{$2}host     "; type = "host"; }
-    { key = "{$2}distro   "; type = "os"; }
-    { key = "{$2}kernel   "; type = "kernel"; }
-    { key = "{$2}uptime   "; type = "uptime"; }
-    { key = "{$2}packages "; type = "packages"; }
-    { key = "{$2}wm       "; type = "wm"; }
-    { key = "{$2}term     "; type = "terminal"; }
-    { key = "{$2}shell    "; type = "shell"; }
-    { key = "{$2}cpu      "; type = "cpu"; showPeCoreCount = true; }
-    { key = "{$2}gpu      "; type = "gpu"; }
-    { key = "{$2}memory   "; type = "memory"; }
+    {
+      key = "{$2}host     ";
+      type = "host";
+    }
+    {
+      key = "{$2}distro   ";
+      type = "os";
+    }
+    {
+      key = "{$2}kernel   ";
+      type = "kernel";
+    }
+    {
+      key = "{$2}uptime   ";
+      type = "uptime";
+    }
+    {
+      key = "{$2}packages ";
+      type = "packages";
+    }
+    {
+      key = "{$2}wm       ";
+      type = "wm";
+    }
+    {
+      key = "{$2}term     ";
+      type = "terminal";
+    }
+    {
+      key = "{$2}shell    ";
+      type = "shell";
+    }
+    {
+      key = "{$2}cpu      ";
+      type = "cpu";
+      showPeCoreCount = true;
+    }
+    {
+      key = "{$2}gpu      ";
+      type = "gpu";
+    }
+    {
+      key = "{$2}memory   ";
+      type = "memory";
+    }
     {
       key = "{$2}disk     ";
       type = "disk";
       format = "{size-used} / {size-total} ({size-percentage})";
     }
-    { format = "{#separator}╰{$1}╯"; type = "custom"; }
+    {
+      format = "{#separator}╰{$1}╯";
+      type = "custom";
+    }
   ];
 }

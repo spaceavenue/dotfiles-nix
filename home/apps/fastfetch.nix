@@ -6,6 +6,7 @@ in
 {
   home.packages = [ pkgs.fastfetch ];
 
-  xdg.configFile."fastfetch/config.jsonc".source =
-    formats.json.generate "config.jsonc" (import ./fastfetch-data.nix);
+  xdg.configFile."fastfetch/config.jsonc".source = formats.json.generate "config.jsonc" (
+    import ./fastfetch-data.nix
+  );
 }

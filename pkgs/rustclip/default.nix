@@ -1,4 +1,10 @@
-{ lib, rustPlatform, fetchFromGitHub, file, makeWrapper }:
+{
+  lib,
+  rustPlatform,
+  fetchFromGitHub,
+  file,
+  makeWrapper,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "rustclip";

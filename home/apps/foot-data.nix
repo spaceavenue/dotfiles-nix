@@ -1,5 +1,5 @@
 {
-  globalSection = {
+  main = {
     app-id = "foot";
     font = "Iosevka Term SS06:style=Extended:size=12, Symbols Nerd Font Mono:size=12";
     font-bold = "Iosevka Term SS06:style=Bold Extended:size=12";
@@ -11,21 +11,19 @@
     include = "~/.config/foot/themes/catppuccin-mocha";
   };
 
-  sections = {
-    bell.system = "no";
+  bell.system = "no";
 
-    scrollback.lines = "10000";
+  scrollback.lines = "10000";
 
-    url = {
-      launch = "xdg-open \${url}";
-      osc8-underline = "always";
-    };
+  url = {
+    launch = "xdg-open \${url}";
+    osc8-underline = "always";
+  };
 
-    cursor = {
-      style = "underline";
-      blink = "yes";
-      blink-rate = "250";
-      underline-thickness = "2.0";
-    };
+  cursor = {
+    style = "underline";
+    blink = "yes";
+    blink-rate = "250";
+    underline-thickness = "2.0";
   };
 }

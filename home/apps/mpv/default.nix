@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 let
   formats = import ../../lib/formats.nix { inherit pkgs lib; };
@@ -26,11 +26,14 @@ in
 
     "mpv/fonts/modernz-icons.ttf".source = assets.fonts.modernzIcons;
 
-    "mpv/script-opts/stats.conf".source =
-      formats.keyValue.generate "stats.conf" (import ./script-opts/stats.nix);
-    "mpv/script-opts/playlistmanager.conf".source =
-      formats.keyValue.generate "playlistmanager.conf" (import ./script-opts/playlistmanager.nix);
-    "mpv/script-opts/modernz.conf".source =
-      formats.keyValue.generate "modernz.conf" (import ./script-opts/modernz.nix);
+    "mpv/script-opts/stats.conf".source = formats.keyValue.generate "stats.conf" (
+      import ./script-opts/stats.nix
+    );
+    "mpv/script-opts/playlistmanager.conf".source = formats.keyValue.generate "playlistmanager.conf" (
+      import ./script-opts/playlistmanager.nix
+    );
+    "mpv/script-opts/modernz.conf".source = formats.keyValue.generate "modernz.conf" (
+      import ./script-opts/modernz.nix
+    );
   };
 }

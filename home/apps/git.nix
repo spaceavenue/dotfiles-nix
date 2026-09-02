@@ -4,7 +4,12 @@ let
   dotfiles = "${config.home.homeDirectory}/.config/nixos/home/dotfiles";
 in
 {
-  home.packages = with pkgs; [ git github-cli delta lazygit ];
+  home.packages = with pkgs; [
+    git
+    github-cli
+    delta
+    lazygit
+  ];
 
   xdg.configFile = {
     "git".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/git";

@@ -1,24 +1,38 @@
-{ pkgs, ... }:
+{ config, ... }:
 
 {
-  systemd.user.services.mpd = {
-    Unit = {
-      Description = "Music Player Daemon";
-      After = [ "network.target" "sound.target" ];
-      Requires = [ "mpd.socket" ];
-    };
-    Service = {
-      Type = "notify";
-      ExecStart = "${pkgs.mpd}/bin/mpd --systemd %h/.config/mpd/mpd.conf";
-      Environment = "XDG_MUSIC_DIR=%h/msc";
-    };
-  };
+  services.mpd = {
+    enable = true;
+    enableSessionVariables = false;
 
-  systemd.user.sockets.mpd = {
-    Unit.Description = "Music Player Daemon Socket";
-    Socket.ListenStream = "127.0.0.1:6600";
-    Install.WantedBy = [ "sockets.target" ];
-  };
+    musicDirectory = "${config.home.homeDirectory}/msc";
+    playlistDirectory = "${config.home.homeDirectory}/msc/mpd_playlists";
+    dataDir = "${config.home.homeDirectory}/.local/share/mpd";
+    dbFile = "${config.home.homeDirectory}/.local/share/mpd/mpd.db";
 
-  xdg.configFile."mpd/mpd.conf".text = import ./mpd-data.nix;
+    network = {
+      listenAddress = "127.0.0.1";
+      port = 6600;
+      startWhenNeeded = true;
+    };
+
+    extraConfig = ''
+      log_file "syslog"
+      auto_update "yes"
+      restore_paused "yes"
+      max_output_buffer_size "16384"
+
+      audio_output {
+      	type "pipewire"
+      	name "pipewire"
+      }
+
+      audio_output {
+             type	"fifo"
+             name	"Visualizer feed"
+             path	"/tmp/mpd.fifo"
+             format	"44100:16:2"
+      }
+    '';
+  };
 }

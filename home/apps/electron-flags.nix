@@ -10,7 +10,11 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [ obsidian vesktop signal-desktop-custom ];
+  home.packages = with pkgs; [
+    obsidian
+    vesktop
+    signal-desktop-custom
+  ];
 
   xdg.configFile = {
     "electron-flags.conf".text = electronFlags;

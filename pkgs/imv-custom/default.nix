@@ -1,6 +1,33 @@
-{ lib, stdenv, fetchFromSourcehut, meson, ninja, pkg-config, wayland-protocols, asciidoc, cmake
-, libGLU, libheif, icu, inih, lcms2, libjpeg_turbo, libjxl, libnsgif, libnsbmp, libpng, librsvg, libtiff, libwebp
-, libxkbcommon, pango, qoi, qoz, wayland, wayland-scanner }:
+{
+  lib,
+  stdenv,
+  fetchFromSourcehut,
+  meson,
+  ninja,
+  pkg-config,
+  wayland-protocols,
+  asciidoc,
+  cmake,
+  libGLU,
+  libheif,
+  icu,
+  inih,
+  lcms2,
+  libjpeg_turbo,
+  libjxl,
+  libnsgif,
+  libnsbmp,
+  libpng,
+  librsvg,
+  libtiff,
+  libwebp,
+  libxkbcommon,
+  pango,
+  qoi,
+  qoz,
+  wayland,
+  wayland-scanner,
+}:
 
 stdenv.mkDerivation rec {
   pname = "imv-custom";
@@ -18,40 +45,41 @@ stdenv.mkDerivation rec {
     sed -i "s/unicode_lib = dependency('icu-io')/unicode_lib = dependency('icu-uc')/" meson.build
   '';
 
-  nativeBuildInputs = 
-    [ 
-      meson 
-      ninja 
-      pkg-config 
-      wayland-protocols 
-      asciidoc 
-      cmake 
-      wayland 
-      wayland-scanner 
-    ];
-  buildInputs = 
-    [ 
-      libGLU 
-      libheif 
-      icu 
-      inih 
-      lcms2 
-      libjpeg_turbo 
-      libjxl 
-      libnsgif 
-      libnsbmp 
-      libpng 
-      librsvg 
-      libtiff 
-      libwebp 
-      libxkbcommon 
-      pango 
-      qoi 
-      qoz 
-      wayland 
-    ];
+  nativeBuildInputs = [
+    meson
+    ninja
+    pkg-config
+    wayland-protocols
+    asciidoc
+    cmake
+    wayland
+    wayland-scanner
+  ];
+  buildInputs = [
+    libGLU
+    libheif
+    icu
+    inih
+    lcms2
+    libjpeg_turbo
+    libjxl
+    libnsgif
+    libnsbmp
+    libpng
+    librsvg
+    libtiff
+    libwebp
+    libxkbcommon
+    pango
+    qoi
+    qoz
+    wayland
+  ];
 
-  mesonFlags = [ "-Dtest=disabled" "-Dwindows=wayland" ];
+  mesonFlags = [
+    "-Dtest=disabled"
+    "-Dwindows=wayland"
+  ];
   env.NIX_CFLAGS_COMPILE = "-march=native -O3";
 
   meta = {

@@ -1,4 +1,8 @@
-{ lib, rustPlatform, fetchFromGitHub, udisks2 }:
+{
+  rustPlatform,
+  fetchFromGitHub,
+  udisks2,
+}:
 
 rustPlatform.buildRustPackage rec {
   pname = "udiskrs";

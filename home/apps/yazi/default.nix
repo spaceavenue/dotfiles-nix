@@ -1,8 +1,4 @@
-# yazi/package.toml and yazi/plugins are deliberately NOT managed here:
-# yazi's own package manager (`ya pkg install` / `ya pkg add`) owns both --
-# it fetches plugins from their upstream repos and rewrites package.toml
-# with what it fetched, which conflicts with a read-only Nix-generated file.
-# After a fresh deploy, run `ya pkg install` once to populate plugins/.
+# After a fresh deploy, run `ya pkg install` once to populate plugins
 { pkgs, lib, ... }:
 
 let

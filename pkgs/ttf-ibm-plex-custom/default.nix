@@ -1,4 +1,9 @@
-{ lib, stdenvNoCC, fetchzip, python3Packages }:
+{
+  lib,
+  stdenvNoCC,
+  fetchzip,
+  python3Packages,
+}:
 
 stdenvNoCC.mkDerivation rec {
   pname = "ttf-ibm-plex-custom";

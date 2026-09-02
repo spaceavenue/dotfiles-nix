@@ -1,15 +1,14 @@
-{ pkgs, lib, ... }:
+_:
 
-let
-  formats = import ../../lib/formats.nix { inherit pkgs lib; };
-in
 {
-  home.packages = [ pkgs.waybar ];
+  programs.waybar = {
+    enable = true;
+    settings.mainBar = import ./config.nix;
+    style = import ./style.nix;
+    systemd.enable = true;
+  };
 
   xdg.configFile = {
-    "waybar/config".source = formats.json.generate "waybar-config.json" (import ./config.nix);
-    "waybar/style.css".text = import ./style.nix;
-
     "waybar/scripts/memory.sh" = {
       text = import ./memory-script.nix;
       executable = true;

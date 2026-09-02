@@ -1,24 +1,30 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
-  boot.loader.grub.enable = false;
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.efi.efiSysMountPoint = "/efi";
-  boot.loader.timeout = 0;
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  boot.loader = {
+    grub.enable = false;
+    systemd-boot.enable = true;
+    timeout = 0;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/efi";
+    };
+  };
 
-  boot.kernelParams = [
-    "zswap.enabled=1"
-    "zswap.compressor=zstd"
-    "zswap.zpool=zsmalloc"
-    "quiet"
-    "loglevel=3"
-    "systemd.show_status=auto"
-    "rd.udev.log_level=3"
-    "bgrt_disable"
-    "nowatchdog"
-    "systemd.getty_auto=no"
-    "systemd.tpm2_pcrs=no"
-  ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+    kernelParams = [
+      "zswap.enabled=1"
+      "zswap.compressor=zstd"
+      "zswap.zpool=zsmalloc"
+      "quiet"
+      "loglevel=3"
+      "systemd.show_status=auto"
+      "rd.udev.log_level=3"
+      "bgrt_disable"
+      "nowatchdog"
+      "systemd.getty_auto=no"
+      "systemd.tpm2_pcrs=no"
+    ];
+  };
 }

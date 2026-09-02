@@ -50,9 +50,18 @@
         Bold = true;
       };
       MultiColorHighlight = [
-        { Foreground = "#ffd1db"; Bold = true; }
-        { Foreground = "#f38ba8"; Bold = true; }
-        { Foreground = "#cba6f7"; Bold = true; }
+        {
+          Foreground = "#ffd1db";
+          Bold = true;
+        }
+        {
+          Foreground = "#f38ba8";
+          Bold = true;
+        }
+        {
+          Foreground = "#cba6f7";
+          Bold = true;
+        }
         { Foreground = "#89b4fa"; }
         { Foreground = "#a6e3a1"; }
         { Foreground = "#fab387"; }
@@ -98,15 +107,25 @@
     cancel = [ "ctrl+c" ];
     close_all_filter = [ "K" ];
     close_doc = [ "ctrl+k" ];
-    close_file = [ "ctrl+F9" "ctrl+alt+s" ];
+    close_file = [
+      "ctrl+F9"
+      "ctrl+alt+s"
+    ];
     column_mode = [ "c" ];
     column_width = [ "alt+o" ];
     convert_type = [ "alt+t" ];
     delimiter = [ "d" ];
-    down = [ "Enter" "Down" "ctrl+n" ];
+    down = [
+      "Enter"
+      "Down"
+      "ctrl+n"
+    ];
     edit = [ "alt+v" ];
     end_right = [ "shift+End" ];
-    exit = [ "Escape" "q" ];
+    exit = [
+      "Escape"
+      "q"
+    ];
     filter = [ "&" ];
     fixed_column = [ "F" ];
     follow_all = [ "ctrl+a" ];
@@ -117,7 +136,11 @@
     half_right = [ "ctrl+right" ];
     header = [ "H" ];
     header_column = [ "Y" ];
-    help = [ "h" "ctrl+F1" "ctrl+alt+c" ];
+    help = [
+      "h"
+      "ctrl+F1"
+      "ctrl+alt+c"
+    ];
     hide_other = [ "alt+-" ];
     input_casesensitive = [ "alt+c" ];
     input_copy = [ "ctrl+c" ];
@@ -132,7 +155,10 @@
     last_section = [ "9" ];
     left = [ "left" ];
     line_number_mode = [ "G" ];
-    logdoc = [ "ctrl+F2" "ctrl+alt+e" ];
+    logdoc = [
+      "ctrl+F2"
+      "ctrl+alt+e"
+    ];
     mark = [ "m" ];
     mark_by_pattern = [ "*" ];
     mark_number = [ "," ];
@@ -142,17 +168,26 @@
     next_mark = [ ">" ];
     next_search = [ "n" ];
     next_section = [ "space" ];
-    page_down = [ "PageDown" "ctrl+v" ];
+    page_down = [
+      "PageDown"
+      "ctrl+v"
+    ];
     page_half_down = [ "ctrl+d" ];
     page_half_up = [ "ctrl+u" ];
-    page_up = [ "PageUp" "ctrl+b" ];
+    page_up = [
+      "PageUp"
+      "ctrl+b"
+    ];
     plain_mode = [ "ctrl+e" ];
     previous_doc = [ "[" ];
     previous_mark = [ "<" ];
     previous_section = [ "^" ];
     rainbow_mode = [ "ctrl+r" ];
     raw_format = [ "alt+r" ];
-    reload = [ "F5" "ctrl+alt+l" ];
+    reload = [
+      "F5"
+      "ctrl+alt+l"
+    ];
     remove_all_mark = [ "ctrl+delete" ];
     remove_mark = [ "M" ];
     right = [ "right" ];
@@ -161,8 +196,14 @@
     search = [ "/" ];
     section_delimiter = [ "alt+d" ];
     section_header_num = [ "F7" ];
-    section_start = [ "ctrl+F3" "alt+s" ];
-    set_view_mode = [ "p" "P" ];
+    section_start = [
+      "ctrl+F3"
+      "alt+s"
+    ];
+    set_view_mode = [
+      "p"
+      "P"
+    ];
     set_write_exit = [ "ctrl+q" ];
     shrink_column = [ "s" ];
     sidebar_doc_list = [ "alt+l" ];
@@ -180,17 +221,29 @@
     suspend = [ "ctrl+z" ];
     sync = [ "ctrl+l" ];
     tabwidth = [ "t" ];
-    toggle_mouse = [ "ctrl+F8" "ctrl+alt+r" ];
+    toggle_mouse = [
+      "ctrl+F8"
+      "ctrl+alt+r"
+    ];
     toggle_ruler = [ "alt+shift+F9" ];
     top = [ "Home" ];
-    up = [ "Up" "ctrl+p" ];
+    up = [
+      "Up"
+      "ctrl+p"
+    ];
     vertical_header = [ "y" ];
-    watch = [ "F4" "ctrl+alt+w" ];
+    watch = [
+      "F4"
+      "ctrl+alt+w"
+    ];
     watch_interval = [ "ctrl+w" ];
     width_left = [ "alt+left" ];
     width_right = [ "alt+right" ];
     word_wrap_mode = [ "alt+w" ];
-    wrap_mode = [ "w" "W" ];
+    wrap_mode = [
+      "w"
+      "W"
+    ];
     write_exit = [ "Q" ];
     write_original = [ "alt+shift+F8" ];
   };

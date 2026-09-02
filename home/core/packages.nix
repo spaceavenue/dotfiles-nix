@@ -15,5 +15,29 @@
     keepassxc
     syncthing
     nautilus
+    claude-code
+    duf
+    dust
+    fd
+    fzf
+    glow
+    hyperfine
+    kid3
+    libqalculate
+    ouch
+    oxipng
+    pavucontrol
+    exiftool
+    playerctl
+    powertop
+    sd
+    trash-cli
+    umu-launcher
+    zoxide
+    imv-custom
+    wtype-custom
+    swaylock-time
+    niri-custom
+    qoz
   ];
 }

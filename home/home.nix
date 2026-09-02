@@ -4,6 +4,7 @@
   imports = [
     ./core/packages.nix
     ./core/services.nix
+    ./core/auto-update.nix
 
     ./apps/niri.nix
     ./apps/fish.nix
