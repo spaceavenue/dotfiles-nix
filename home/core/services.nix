@@ -3,8 +3,6 @@
 { pkgs, ... }:
 
 {
-  services.pipewire.enable = true;
-
   home.packages = [
     pkgs.rustclip
     pkgs.cliphist

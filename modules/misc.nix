@@ -21,4 +21,11 @@
   ];
 
   system.stateVersion = "26.05";
+
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+    ACTION=="add", SUBSYSTEM=="backlight", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+
+    ACTION=="add", SUBSYSTEM=="input", ATTR{name}=="TPPS/2 Elan TrackPoint", ATTR{device/sensitivity}="240", ATTR{device/press_to_select}="1"
+  '';
 }

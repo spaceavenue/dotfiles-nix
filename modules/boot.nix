@@ -11,8 +11,10 @@
     };
   };
 
+  chaotic.nyx.cache.enable = true;
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
     kernelParams = [
       "zswap.enabled=1"
       "zswap.compressor=zstd"

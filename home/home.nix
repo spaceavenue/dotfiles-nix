@@ -39,5 +39,6 @@
     ./apps/rust.nix
     ./apps/git.nix
     ./apps/beets.nix
+    ./apps/syncthing.nix
   ];
 }

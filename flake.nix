@@ -19,6 +19,7 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs =
@@ -29,6 +30,7 @@
       fenix,
       firefox-nightly,
       treefmt-nix,
+      chaotic,
       ...
     }:
     let
@@ -59,12 +61,12 @@
           ./modules/networking.nix
           ./modules/users.nix
           ./modules/desktop.nix
-          ./modules/steam.nix
           ./modules/audio.nix
           ./modules/fonts.nix
           ./modules/power.nix
           ./modules/packages.nix
           ./modules/misc.nix
+          chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

@@ -9,11 +9,11 @@
     dump-bgra
     adw-gtk3
     bibata-cursors
-    prismlauncher
+    (prismlauncher.override { jdks = [ jdk25 ]; })
     qbittorrent
     nicotine-plus
     keepassxc
-    syncthing
+    # syncthing
     nautilus
     claude-code
     duf

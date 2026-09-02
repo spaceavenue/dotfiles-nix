@@ -8,7 +8,6 @@
     gnupg
     imagemagick
     libnotify
-    make
     mold
     # niri-custom
     ntfs3g
@@ -22,4 +21,7 @@
     xeyes
     xwayland-satellite
   ];
+
+  programs.nix-ld.enable = true;
+  programs.steam.enable = true;
 }
