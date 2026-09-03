@@ -13,7 +13,6 @@
     qbittorrent
     nicotine-plus
     keepassxc
-    # syncthing
     nautilus
     claude-code
     duf
@@ -30,6 +29,7 @@
     exiftool
     playerctl
     powertop
+    rustup
     sd
     trash-cli
     umu-launcher
@@ -40,4 +40,12 @@
     niri-custom
     qoz
   ];
+
+# prebuilt file->package index for fast lookups via nix-locate. pulls the
+# nix-community nix-index-database flake, a prebuilt database updated weekly.
+# the home-manager module (a `sharedModule` in flake.nix) overrides
+# `programs.nix-index.package` to a wrapper bundling that database and symlinks
+# it into ~/.cache/nix-index/files.
+# update by the weekly `nix flake update` timer (home/core/auto-update.nix).
+  programs.nix-index.enable = true;
 }

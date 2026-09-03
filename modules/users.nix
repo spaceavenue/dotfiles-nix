@@ -33,5 +33,13 @@
     ];
   };
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+    # fenv (foreign-env fish plugin) forks a bash-interactive process at every
+    # shell startup to source /etc/fish/{setEnvironment,foreign-env/*}.
+    # increases startup by ~29ms, so its gotta go.
+    # babelfish translates those scripts to fish at build time, so only a .fish
+    # file gets sourced.
+    useBabelfish = true;
+  };
 }

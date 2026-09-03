@@ -20,6 +20,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -31,6 +35,7 @@
       firefox-nightly,
       treefmt-nix,
       chaotic,
+      nix-index-database,
       ...
     }:
     let
@@ -73,6 +78,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.sanya = import ./home/home.nix;
             home-manager.backupFileExtension = "bak";
+            home-manager.sharedModules = [ nix-index-database.homeModules.default ];
           }
         ];
       };

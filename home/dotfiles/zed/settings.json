@@ -12,9 +12,6 @@
   "edit_predictions": {
     "allow_data_collection": "no"
   },
-  "agent_servers": {
-    
-  },
   "sticky_scroll": {
     "enabled": true
   },
@@ -46,12 +43,6 @@
     "show_background": false,
     "enabled": true,
   },
-  "agent": {
-    "sidebar_side": "right",
-    "favorite_models": [],
-    "model_parameters": [],
-    "show_merge_conflict_indicator": false,
-  },
   "window_decorations": "server",
   "title_bar": {
     "show_user_menu": false,
@@ -71,9 +62,6 @@
   "icon_theme": "Catppuccin Mocha",
   "terminal": {
     "font_family": "Iosevka Term SS06",
-    "shell": {
-      "program": "/usr/bin/fish"
-    },
     "max_scroll_history_lines": 10001,
     "blinking": "on",
     "cursor_shape": "underline",
