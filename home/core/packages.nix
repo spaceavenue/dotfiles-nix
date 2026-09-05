@@ -12,7 +12,9 @@
     (prismlauncher.override { jdks = [ jdk25 ]; })
     qbittorrent
     nicotine-plus
-    keepassxc
+    # drops libkeepassxc-autotype-xcb.so, which opens a raw xcb connection
+    # spawning xwayland-satellite on every login. does mean no auto-type, whatever.
+    (keepassxc.override { withKeePassX11 = false; })
     nautilus
     claude-code
     duf
@@ -41,11 +43,11 @@
     qoz
   ];
 
-# prebuilt file->package index for fast lookups via nix-locate. pulls the
-# nix-community nix-index-database flake, a prebuilt database updated weekly.
-# the home-manager module (a `sharedModule` in flake.nix) overrides
-# `programs.nix-index.package` to a wrapper bundling that database and symlinks
-# it into ~/.cache/nix-index/files.
-# update by the weekly `nix flake update` timer (home/core/auto-update.nix).
+  # prebuilt file->package index for fast lookups via nix-locate. pulls the
+  # nix-community nix-index-database flake, a prebuilt database updated weekly.
+  # the home-manager module (a `sharedModule` in flake.nix) overrides
+  # `programs.nix-index.package` to a wrapper bundling that database and symlinks
+  # it into ~/.cache/nix-index/files.
+  # update by the weekly `nix flake update` timer (home/core/auto-update.nix).
   programs.nix-index.enable = true;
 }

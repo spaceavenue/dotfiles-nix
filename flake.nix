@@ -71,6 +71,7 @@
           ./modules/power.nix
           ./modules/packages.nix
           ./modules/misc.nix
+          ./modules/auto-upgrade.nix
           chaotic.nixosModules.default
           home-manager.nixosModules.home-manager
           {
