@@ -1,6 +1,6 @@
-# Periodic self-update for the flake: bump inputs, regenerates the build-std
+# Periodic self-update for the flake: bump inputs, regenerate the build-std
 # Cargo.lock files, auto-patches stale fixed-output-derivation hashes
-# anywhere under pkgs/ - see pkgs/auto-update.py.
+# anywhere under pkgs/ using pkgs/auto-update.py.
 { config, pkgs, ... }:
 
 let
@@ -8,7 +8,7 @@ let
 in
 {
   systemd.user.services.nix-auto-update = {
-    Unit.Description = "nix flake update + Cargo.lock/hash update";
+    Unit.Description = "nix flake update + Cargo.lock hash update";
     Service = {
       Type = "oneshot";
       ExecStart = pkgs.writeShellScript "nix-auto-update" ''

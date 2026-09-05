@@ -34,5 +34,15 @@ runCommandLocal "signal-desktop-custom-${signal-desktop.version}"
     makeWrapper "${lib.getExe electron_43}" "$out/bin/signal-desktop" \
       --set-default ELECTRON_FORCE_IS_PACKAGED 1 \
       --add-flags "$resources/app.asar" \
-      --add-flags ${lib.escapeShellArg (lib.concatStringsSep " " (import ../electron-flags.nix))}
+      --add-flags ${
+        lib.escapeShellArg (
+          lib.concatStringsSep " " [
+            "--enable-features=UseOzonePlatform,WaylandWindowDecorations,AllowQt,VaapiVideoDecoder,VaapiIgnoreDriverChecks"
+            "--ozone-platform=wayland"
+            "--password-store=gnome-libsecret"
+            "--gtk-version=4"
+            "--enable-unsafe-webgpu"
+          ]
+        )
+      }
   ''

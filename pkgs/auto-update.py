@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
-"""Periodic self-update flow for this flake, run via nix-auto-update.service/.timer
-(see home/core/auto-update.nix), or manually with no args for the full flow:
+
+"""Periodic self-update flow run via nix-auto-update.service/.timer
+(home/core/auto-update.nix), or manually (w/ no args):
 
   1. bump all flake inputs
   2. regenerate the build-std Cargo.lock files (rusty-wl-utils, rustclip, dump-bgra)
      against the (possibly newer) fenix nightly
   3. bump any stale fixed-output-derivation hash anywhere in the repo
      (fetchFromGitHub `hash`, cargoLock `outputHashes`) against a toplevel build
-  4. format + flake-check + one last verification build
-  5. on success, commit exactly the files we touched
+  4. format, check, do verification build
+  5. on success, commit the files that were touched
 
-Subcommands run one step in isolation, for debugging:
+subcommands run one step in isolation (for debugging and stuff):
   auto-update.py rust-locks
   auto-update.py heal-hashes [flake installable, default: toplevel]
 """
@@ -41,8 +42,7 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
 
 
 def nix_build_out_path(installable: str) -> Path:
-    """Like `$(nix build --no-link --print-out-paths ...)`: only stdout (the
-    path) is captured, build progress on stderr still streams live."""
+    # only stdout (the path) is captured, stderr still streams live
     result = subprocess.run(
         ["nix", "build", "--no-link", "--print-out-paths", installable],
         cwd=REPO_ROOT,
@@ -53,10 +53,7 @@ def nix_build_out_path(installable: str) -> Path:
     return Path(result.stdout.strip().splitlines()[-1])
 
 
-# ---------------------------------------------------------------------------
 # Step 2: regenerate build-std Cargo.lock files
-# ---------------------------------------------------------------------------
-
 
 @dataclass
 class RustLockTarget:
@@ -78,7 +75,7 @@ _VERSION_RE = re.compile(r'^version = "([^"]+)"', re.MULTILINE)
 
 
 def _parse_lock_blocks(text: str) -> tuple[str, list[tuple[str, str]]]:
-    """Split a Cargo.lock into (header, [(dedup_key, block_text), ...]),
+    """split a Cargo.lock into (header, [(dedup_key, block_text), ...]),
     preserving order and dropping exact name+version duplicates."""
     header, *blocks = _PACKAGE_BLOCK_RE.split(text)
     seen: set[str] = set()
@@ -95,12 +92,9 @@ def _parse_lock_blocks(text: str) -> tuple[str, list[tuple[str, str]]]:
 
 def merge_cargo_locks(project_lock: Path, library_lock: Path) -> None:
     """`cargo build -Z build-std` resolves std's own registry dependencies
-    (hashbrown, addr2line, gimli, ...) against rust-src's OWN bundled
-    library/Cargo.lock, but doesn't merge them into the project's Cargo.lock -
-    yet Nix's fully-offline vendor step needs every one of them present in
-    the single lockfile we ship. Merge rust-src's lock in by hand
-    (whole-cloth, every target's std deps included, same as what's already
-    checked in)."""
+    against rust-src's own library/Cargo.lock, but doesn't merge them into
+    the project's Cargo.lock. Nix's vendor step needs them present in the
+    single lockfile. so we merge rust-src's lock in here."""
     header, project_blocks = _parse_lock_blocks(project_lock.read_text())
     _, library_blocks = _parse_lock_blocks(library_lock.read_text())
 
@@ -154,23 +148,21 @@ def update_rust_locks() -> None:
 
             dest = REPO_ROOT / "pkgs" / t.name / "Cargo.lock"
             shutil.copy(src / "Cargo.lock", dest)
-            log(f"== updated pkgs/{t.name}/Cargo.lock !")
+            log(f"== updated pkgs/{t.name}/Cargo.lock ! ==")
 
 
-# ---------------------------------------------------------------------------
 # Step 3: heal stale fixed-output-derivation hashes
-# ---------------------------------------------------------------------------
 
 _SPECIFIED_RE = re.compile(r"specified:\s*(\S+)")
 _GOT_RE = re.compile(r"got:\s*(\S+)")
 
 
 def heal_hashes(target: str, max_iters: int = 10) -> bool:
-    """Repeatedly builds `target`. On a `hash mismatch in fixed-output
+    """Repeatedly build `target`. On a `hash mismatch in fixed-output
     derivation` error, string-replaces the stale hash with the one nix
     reports, everywhere it appears under a tracked .nix file. Works for any
     package using this pattern (fetchFromGitHub `hash`, cargoLock
-    `outputHashes`, etc). Stops the moment a build fails for a reason that
+    `outputHashes`, etc). Stops when a build fails for a reason that
     isn't a hash mismatch."""
     for i in range(1, max_iters + 1):
         log(f"== heal-hashes: build attempt {i}/{max_iters} ==")
@@ -216,10 +208,7 @@ def heal_hashes(target: str, max_iters: int = 10) -> bool:
     return False
 
 
-# ---------------------------------------------------------------------------
 # Full flow
-# ---------------------------------------------------------------------------
-
 
 def main_all() -> int:
     log("updating flake inputs...")
