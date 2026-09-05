@@ -1,7 +1,6 @@
 # Periodic self-update for the flake: bump inputs, regenerates the build-std
 # Cargo.lock files, auto-patches stale fixed-output-derivation hashes
-# anywhere under pkgs/ see pkgs/auto-update.sh, pkgs/update-rust-locks.sh,
-# pkgs/heal-hashes.sh.
+# anywhere under pkgs/ - see pkgs/auto-update.py.
 { config, pkgs, ... }:
 
 let
@@ -14,9 +13,9 @@ in
       Type = "oneshot";
       ExecStart = pkgs.writeShellScript "nix-auto-update" ''
         set -uo pipefail
-        export PATH="${pkgs.git}/bin:${pkgs.nix}/bin:${pkgs.gnused}/bin:${pkgs.gnugrep}/bin:$PATH"
+        export PATH="${pkgs.git}/bin:${pkgs.nix}/bin:${pkgs.python3}/bin:$PATH"
 
-        if ${repoRoot}/pkgs/auto-update.sh; then
+        if ${repoRoot}/pkgs/auto-update.py; then
           if ${pkgs.git}/bin/git -C ${repoRoot} diff --quiet; then
             ${pkgs.libnotify}/bin/notify-send "nix flake update" "But nothing happened." || true
           else
