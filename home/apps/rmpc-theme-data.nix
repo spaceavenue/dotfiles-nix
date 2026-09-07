@@ -1,3 +1,6 @@
+let
+  palette = import ../lib/palette.nix;
+in
 ''
   #![enable(implicit_some)]
   #![enable(unwrap_newtypes)]
@@ -7,16 +10,16 @@
       format_tag_separator: " | ",
       browser_column_widths: [20, 38, 42],
       background_color: None,
-      text_color: Some("#cc99aa"),
+      text_color: Some("${palette.muted}"),
       header_background_color: None,
       modal_background_color: None,
       modal_backdrop: false,
-      preview_label_style: (fg: "#f38ba8"),
-      preview_metadata_group_style: (fg: "#ffd1db", modifiers: "Bold"),
-      highlighted_item_style: (fg: "#18000f", bg: "#ffd1db", modifiers: "Bold"),
-      current_item_style: (fg: "#f38ba8", modifiers: "Bold"),
-      borders_style: (fg: "#ffd1db"),
-      highlight_border_style: (fg: "#ffd1db"),
+      preview_label_style: (fg: "${palette.red}"),
+      preview_metadata_group_style: (fg: "${palette.text}", modifiers: "Bold"),
+      highlighted_item_style: (fg: "${palette.base}", bg: "${palette.text}", modifiers: "Bold"),
+      current_item_style: (fg: "${palette.red}", modifiers: "Bold"),
+      borders_style: (fg: "${palette.text}"),
+      highlight_border_style: (fg: "${palette.text}"),
   	symbols: (
           song: "S",
           dir: "D",
@@ -37,23 +40,23 @@
           marker_current_style: None,
       ),
       level_styles: (
-          info: (fg: "#f38ba8", bg: "black"),
-          warn: (fg: "#ffd1db", bg: "black"),
+          info: (fg: "${palette.red}", bg: "black"),
+          warn: (fg: "${palette.text}", bg: "black"),
           error: (fg: "red", bg: "black"),
-          debug: (fg: "#cba6f7", bg: "black"),
-          trace: (fg: "#cc99aa", bg: "black"),
+          debug: (fg: "${palette.mauve}", bg: "black"),
+          trace: (fg: "${palette.muted}", bg: "black"),
       ),
       progress_bar: (
           symbols: ["-", "-", ">", " ", ">"],
-          track_style: (fg: "#cc99aa"),
-          elapsed_style: (fg: "#f38ba8"),
-          thumb_style: (fg: "#ffd1db"),
+          track_style: (fg: "${palette.muted}"),
+          elapsed_style: (fg: "${palette.red}"),
+          thumb_style: (fg: "${palette.text}"),
           use_track_when_empty: true,
       ),
       scrollbar: None,
       tab_bar: (
-          active_style: (fg: "#18000f", bg: "#ffd1db", modifiers: "Bold"),
-          inactive_style: (fg: "#f38ba8"),
+          active_style: (fg: "${palette.base}", bg: "${palette.text}", modifiers: "Bold"),
+          inactive_style: (fg: "${palette.red}"),
       ),
       lyrics: (
           timestamp: false
@@ -93,8 +96,8 @@
           ),
           (
               prop: (
-  				kind: Property(Album), style: (fg: "#cc99aa"),
-                  default: (kind: Text("Unknown Album"), style: (fg: "#cc99aa"))
+  				kind: Property(Album), style: (fg: "${palette.muted}"),
+                  default: (kind: Text("Unknown Album"), style: (fg: "${palette.muted}"))
               ),
               label_prop: (kind: Text("Album")),
               width: "30%",
@@ -177,40 +180,40 @@
       components: {
   		"elapsed_and_bitrate": Pane(Property(
               content: [
-                  (kind: Property(Status(Elapsed)), style: (fg: "#f38ba8")),
-                  (kind: Text(" / "), style: (fg: "#cba6f7")),
-                  (kind: Property(Status(Duration)), style: (fg: "#f38ba8")),
+                  (kind: Property(Status(Elapsed)), style: (fg: "${palette.red}")),
+                  (kind: Text(" / "), style: (fg: "${palette.mauve}")),
+                  (kind: Property(Status(Duration)), style: (fg: "${palette.red}")),
                   (kind: Group([
-  						(kind: Text(" ("), style: (fg: "#cba6f7")),
-  						(kind: Property(Status(Bitrate)), style: (fg: "#cba6f7")),
-  						(kind: Text(" kbps)"), style: (fg: "#cba6f7")),
+  						(kind: Text(" ("), style: (fg: "${palette.mauve}")),
+  						(kind: Property(Status(Bitrate)), style: (fg: "${palette.mauve}")),
+  						(kind: Text(" kbps)"), style: (fg: "${palette.mauve}")),
                   ])),
               ],
               align: Right,
           )),
   		"song_status": Pane(Property(
   			content: [
-  				(kind: Text("["), style: (fg: "#ffd1db", modifiers: "Bold")),
-                  (kind: Property(Status(StateV2())), style: (fg: "#ffd1db", modifiers: "Bold")),
-                  (kind: Text("] "), style: (fg: "#ffd1db", modifiers: "Bold")),
+  				(kind: Text("["), style: (fg: "${palette.text}", modifiers: "Bold")),
+                  (kind: Property(Status(StateV2())), style: (fg: "${palette.text}", modifiers: "Bold")),
+                  (kind: Text("] "), style: (fg: "${palette.text}", modifiers: "Bold")),
   			],
   			align: Left,
   		)),
           "song_info": Pane(Property(
               content: [
                   (
-  					kind: Property(Song(Title)), style: (fg: "#ffd1db", modifiers: "Bold"), 
-  					default: (kind: Text("No Song"), style: (fg: "#ffd1db", modifiers: "Bold"))
+  					kind: Property(Song(Title)), style: (fg: "${palette.text}", modifiers: "Bold"), 
+  					default: (kind: Text("No Song"), style: (fg: "${palette.text}", modifiers: "Bold"))
   				),
-                  (kind: Text(" by "), style: (fg: "#cba6f7")),
+                  (kind: Text(" by "), style: (fg: "${palette.mauve}")),
                   (
-  					kind: Property(Song(Artist)), style: (fg: "#f38ba8", modifiers: "Bold"), 
-  					default: (kind: Text("Unknown"), style: (fg: "#f38ba8", modifiers: "Bold"))
+  					kind: Property(Song(Artist)), style: (fg: "${palette.red}", modifiers: "Bold"), 
+  					default: (kind: Text("Unknown"), style: (fg: "${palette.red}", modifiers: "Bold"))
   				),
-  				(kind: Text(" in "), style: (fg: "#cba6f7")),
+  				(kind: Text(" in "), style: (fg: "${palette.mauve}")),
   				(
-  					kind: Property(Song(Album)), style: (fg: "#f38ba8", modifiers: "Bold"), 
-  					default: (kind: Text("Unknown"), style: (fg: "#f38ba8", modifiers: "Bold"))
+  					kind: Property(Song(Album)), style: (fg: "${palette.red}", modifiers: "Bold"), 
+  					default: (kind: Text("Unknown"), style: (fg: "${palette.red}", modifiers: "Bold"))
   				),
               ],
               align: Left,
@@ -222,7 +225,7 @@
                   (
   					size: "9", 
   					pane: Pane(Property(
-  						content: [(kind: Text("[Volume] "), style: (fg: "#ffd1db", modifiers: "Bold"))], 
+  						content: [(kind: Text("[Volume] "), style: (fg: "${palette.text}", modifiers: "Bold"))], 
   						align: Right
   					))
   				),
@@ -231,55 +234,55 @@
   					pane: Pane(Volume(
   						kind: Slider(
   							symbols: (filled: "─", thumb: "●", track: "─"),
-  							track_style: (fg: "#cc99aa"),
-  							filled_style: (fg: "#f38ba8"),
-  							thumb_style: (fg: "#ffd1db"),
+  							track_style: (fg: "${palette.muted}"),
+  							filled_style: (fg: "${palette.red}"),
+  							thumb_style: (fg: "${palette.text}"),
   						),
   					))
   				),
                   (
   					size: "5", 
   					pane: Pane(Property(
-  						content: [(kind: Property(Status(Volume)), style: (fg: "#f38ba8"))], 
+  						content: [(kind: Property(Status(Volume)), style: (fg: "${palette.red}"))], 
   						align: Right
   					))
   				),
-                  (size: "2", pane: Pane(Property(content: [(kind: Text("% "), style: (fg: "#f38ba8"))]))),
+                  (size: "2", pane: Pane(Property(content: [(kind: Text("% "), style: (fg: "${palette.red}"))]))),
                   (size: "6", pane: Component("states")),
               ]
           ),
           "states": Pane(Property(
               content: [
-                  (kind: Text("["), style: (fg: "#cba6f7", modifiers: "Bold")),
+                  (kind: Text("["), style: (fg: "${palette.mauve}", modifiers: "Bold")),
                   (kind: Property(Status(RepeatV2(
                       on_label: "z",
                       off_label: "z",
-                      on_style: (fg: "#cba6f7", modifiers: "Bold"),
-                      off_style: (fg: "#cc99aa"),
+                      on_style: (fg: "${palette.mauve}", modifiers: "Bold"),
+                      off_style: (fg: "${palette.muted}"),
                   )))),
                   (kind: Property(Status(RandomV2(
                       on_label: "x",
                       off_label: "x",
-                      on_style: (fg: "#cba6f7", modifiers: "Bold"),
-                      off_style: (fg: "#cc99aa"),
+                      on_style: (fg: "${palette.mauve}", modifiers: "Bold"),
+                      off_style: (fg: "${palette.muted}"),
                   )))),
                   (kind: Property(Status(ConsumeV2(
                       on_label: "c",
                       off_label: "c",
                       oneshot_label: "c",
-                      on_style: (fg: "#cba6f7", modifiers: "Bold"),
-                      off_style: (fg: "#cc99aa"),
-                      oneshot_style: (fg: "#f38ba8"),
+                      on_style: (fg: "${palette.mauve}", modifiers: "Bold"),
+                      off_style: (fg: "${palette.muted}"),
+                      oneshot_style: (fg: "${palette.red}"),
                   )))),
                   (kind: Property(Status(SingleV2(
                       on_label: "v",
                       off_label: "v",
                       oneshot_label: "v",
-                      on_style: (fg: "#cba6f7", modifiers: "Bold"),
-                      off_style: (fg: "#cc99aa"),
-                      oneshot_style: (fg: "#ffd1db"),
+                      on_style: (fg: "${palette.mauve}", modifiers: "Bold"),
+                      off_style: (fg: "${palette.muted}"),
+                      oneshot_style: (fg: "${palette.text}"),
                   )))),
-                  (kind: Text("]"), style: (fg: "#cba6f7", modifiers: "Bold")),
+                  (kind: Text("]"), style: (fg: "${palette.mauve}", modifiers: "Bold")),
               ],
               align: Right,
           )),

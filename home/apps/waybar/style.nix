@@ -1,10 +1,13 @@
+let
+  palette = import ../../lib/palette.nix;
+in
 ''
   @define-color main-bg rgba(0, 0, 0, 0.0);
-  @define-color main-fg #f38ba8;
-  @define-color module-bg #18000f;
-  @define-color module-fg #ffd1db;
-  @define-color module-bg-active #ffd1db;
-  @define-color module-fg-active #18000f;
+  @define-color main-fg ${palette.red};
+  @define-color module-bg ${palette.base};
+  @define-color module-fg ${palette.text};
+  @define-color module-bg-active ${palette.text};
+  @define-color module-fg-active ${palette.base};
 
   * {
       all: initial;

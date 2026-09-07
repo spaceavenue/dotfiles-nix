@@ -12,7 +12,9 @@
     # niri-custom
     ntfs3g
     openssh
+    poppler-utils
     pinentry-curses
+    python3
     smartmontools
     ttf-ibm-plex-custom
     ttc-iosevka-collection

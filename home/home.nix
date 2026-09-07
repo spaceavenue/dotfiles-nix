@@ -36,6 +36,7 @@
     ./apps/wgetrc.nix
     ./apps/yt-dlp.nix
     ./apps/electron-flags.nix
+    ./apps/vesktop.nix
     ./apps/git.nix
     ./apps/beets.nix
     ./apps/syncthing.nix

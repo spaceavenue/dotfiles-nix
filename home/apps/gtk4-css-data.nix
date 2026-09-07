@@ -1,21 +1,24 @@
+let
+  palette = import ../lib/palette.nix;
+in
 ''
   /* Catppuccin mocha theme
   based on the solarized dark colours from adw-colors: https://github.com/lassekongo83/adw-colors/tree/main/themes/solarized-dark */
 
   /* Catppuccin colors */
-  @define-color accent #f5c2e7;
-  @define-color red #f38ba8;
-  @define-color green #a6e3a1;
-  @define-color peach #fab387;
-  @define-color yellow #f9e2af;
-  @define-color blue #89b4fa;
-  @define-color mauve #cba6f7;
-  @define-color text #ffd1db;
-  @define-color surface_0 #1d0213;
-  @define-color surface_1 #240518;
-  @define-color surface_2 #2c081e;
-  @define-color base #18000f;
-  @define-color crust #12000c;
+  @define-color accent ${palette.pink};
+  @define-color red ${palette.red};
+  @define-color green ${palette.green};
+  @define-color peach ${palette.peach};
+  @define-color yellow ${palette.yellow};
+  @define-color blue ${palette.blue};
+  @define-color mauve ${palette.mauve};
+  @define-color text ${palette.text};
+  @define-color surface_0 ${palette.surfaceDark0};
+  @define-color surface_1 ${palette.surfaceDark1};
+  @define-color surface_2 ${palette.surfaceDark2};
+  @define-color base ${palette.base};
+  @define-color crust ${palette.crust};
 
   /* Adwaita stuff */
   @define-color accent_color @accent;

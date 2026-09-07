@@ -1,3 +1,6 @@
+let
+  palette = import ../../lib/palette.nix;
+in
 ''
   ###########
   # GPU API # 
@@ -75,9 +78,9 @@
   sub-font='Iosevka Etoile'
   sub-font-size=40
   sub-blur=0.0
-  sub-border-color='#180004'          # Subtitle outline
+  sub-border-color='${palette.shadow}'          # Subtitle outline
   sub-border-size=3.0
-  sub-color='#ffd1db'                 # Subtitle text
+  sub-color='${palette.text}'                 # Subtitle text
   sub-margin-x=100
   sub-margin-y=50
   sub-shadow-color=0.0/0.0/0.0/0.25

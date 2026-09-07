@@ -1,3 +1,6 @@
+let
+  palette = import ../lib/palette.nix;
+in
 ''
   <?xml version="1.0" encoding="UTF-8"?>
   <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -19,25 +22,25 @@
           <key>settings</key>
           <dict>
             <key>background</key>
-            <string>#18000f</string>
+            <string>${palette.base}</string>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
             <key>caret</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
             <key>lineHighlight</key>
             <string>#ffd1db0f</string>
             <key>misspelling</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>accent</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>selection</key>
             <string>#ffd1db44</string>
             <key>activeGuide</key>
-            <string>#38122c</string>
+            <string>${palette.guide}</string>
             <key>findHighlight</key>
             <string>#f38ba855</string>
             <key>gutterForeground</key>
-            <string>#ac798a</string>
+            <string>${palette.subtext}</string>
           </dict>
         </dict>
         <dict>
@@ -48,7 +51,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -59,7 +62,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ac798a</string>
+            <string>${palette.subtext}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -72,7 +75,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ac798a</string>
+            <string>${palette.subtext}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -83,7 +86,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -92,7 +95,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -103,7 +106,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -112,7 +115,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -123,7 +126,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -134,7 +137,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -143,7 +146,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -156,7 +159,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -169,7 +172,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -182,7 +185,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -193,7 +196,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -204,7 +207,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -217,7 +220,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -226,7 +229,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -239,7 +242,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -248,7 +251,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -259,7 +262,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -270,7 +273,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -281,7 +284,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -292,7 +295,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -305,7 +308,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -316,7 +319,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -327,7 +330,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -349,7 +352,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -360,7 +363,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -382,7 +385,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -393,7 +396,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -404,7 +407,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -415,7 +418,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -426,7 +429,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -437,7 +440,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -446,7 +449,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -455,7 +458,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -468,7 +471,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -479,7 +482,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -490,7 +493,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -501,7 +504,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -512,7 +515,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -523,7 +526,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -536,7 +539,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -547,7 +550,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -560,7 +563,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -571,7 +574,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -582,7 +585,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -593,7 +596,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -604,7 +607,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -615,7 +618,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -626,7 +629,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -637,7 +640,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -648,7 +651,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -659,7 +662,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -670,7 +673,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -681,7 +684,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -692,7 +695,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -703,7 +706,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -714,7 +717,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -725,7 +728,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -736,7 +739,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f2cdcd</string>
+            <string>${palette.flamingo}</string>
           </dict>
         </dict>
         <dict>
@@ -747,7 +750,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -758,7 +761,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f2cdcd</string>
+            <string>${palette.flamingo}</string>
           </dict>
         </dict>
         <dict>
@@ -769,7 +772,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -780,7 +783,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -793,7 +796,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -804,7 +807,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -815,7 +818,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -828,7 +831,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -839,7 +842,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -850,7 +853,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -872,7 +875,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -883,7 +886,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -894,7 +897,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -916,7 +919,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -927,7 +930,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -938,7 +941,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -949,7 +952,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -958,7 +961,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -969,7 +972,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -980,7 +983,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -993,7 +996,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1004,7 +1007,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1017,7 +1020,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1028,7 +1031,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -1039,7 +1042,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1050,7 +1053,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -1061,7 +1064,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f2cdcd</string>
+            <string>${palette.flamingo}</string>
           </dict>
         </dict>
         <dict>
@@ -1072,7 +1075,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1085,7 +1088,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1094,7 +1097,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1103,7 +1106,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1112,7 +1115,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -1121,7 +1124,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -1130,7 +1133,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#74c7ec</string>
+            <string>${palette.sapphire}</string>
           </dict>
         </dict>
         <dict>
@@ -1139,7 +1142,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#b4befe</string>
+            <string>${palette.lavender}</string>
           </dict>
         </dict>
         <dict>
@@ -1148,7 +1151,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string>bold</string>
           </dict>
@@ -1159,7 +1162,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1183,7 +1186,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -1194,7 +1197,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#b4befe</string>
+            <string>${palette.lavender}</string>
           </dict>
         </dict>
         <dict>
@@ -1205,7 +1208,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -1216,7 +1219,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -1227,7 +1230,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ac798a</string>
+            <string>${palette.subtext}</string>
           </dict>
         </dict>
         <dict>
@@ -1238,7 +1241,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1249,7 +1252,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1260,7 +1263,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1271,7 +1274,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -1282,7 +1285,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1295,7 +1298,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#b4befe</string>
+            <string>${palette.lavender}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1308,7 +1311,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1321,7 +1324,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -1332,7 +1335,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -1343,7 +1346,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1354,7 +1357,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -1376,7 +1379,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1387,7 +1390,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1400,7 +1403,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1413,7 +1416,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1424,7 +1427,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1435,7 +1438,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -1446,7 +1449,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -1457,7 +1460,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1470,7 +1473,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1481,7 +1484,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1492,7 +1495,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1503,7 +1506,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1514,7 +1517,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1527,7 +1530,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1551,7 +1554,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1562,7 +1565,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1573,7 +1576,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1584,7 +1587,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#cba6f7</string>
+            <string>${palette.mauve}</string>
           </dict>
         </dict>
         <dict>
@@ -1595,7 +1598,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -1606,7 +1609,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1617,7 +1620,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5e0dc</string>
+            <string>${palette.rosewater}</string>
           </dict>
         </dict>
         <dict>
@@ -1628,7 +1631,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1639,7 +1642,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1650,7 +1653,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -1661,7 +1664,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1685,7 +1688,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1698,7 +1701,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
             <key>fontStyle</key>
             <string/>
           </dict>
@@ -1711,7 +1714,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1722,7 +1725,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1735,7 +1738,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1746,7 +1749,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1759,7 +1762,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -1770,7 +1773,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
         <dict>
@@ -1781,7 +1784,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1792,7 +1795,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1805,7 +1808,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1818,7 +1821,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1829,7 +1832,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1840,7 +1843,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -1851,7 +1854,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89dceb</string>
+            <string>${palette.sky}</string>
           </dict>
         </dict>
         <dict>
@@ -1862,7 +1865,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -1873,7 +1876,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#eba0ac</string>
+            <string>${palette.maroon}</string>
           </dict>
         </dict>
         <dict>
@@ -1884,7 +1887,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1895,7 +1898,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1906,7 +1909,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
           </dict>
         </dict>
         <dict>
@@ -1917,7 +1920,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f5c2e7</string>
+            <string>${palette.pink}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1930,7 +1933,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1943,7 +1946,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1954,7 +1957,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
             <key>fontStyle</key>
             <string>italic</string>
           </dict>
@@ -1965,7 +1968,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -1976,7 +1979,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -1987,7 +1990,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -1998,7 +2001,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -2009,7 +2012,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ac798a</string>
+            <string>${palette.subtext}</string>
           </dict>
         </dict>
         <dict>
@@ -2018,7 +2021,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -2027,7 +2030,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#89b4fa</string>
+            <string>${palette.blue}</string>
           </dict>
         </dict>
         <dict>
@@ -2036,7 +2039,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#ffd1db</string>
+            <string>${palette.text}</string>
           </dict>
         </dict>
         <dict>
@@ -2047,7 +2050,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#94e2d5</string>
+            <string>${palette.teal}</string>
           </dict>
         </dict>
         <dict>
@@ -2056,7 +2059,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f38ba8</string>
+            <string>${palette.red}</string>
           </dict>
         </dict>
         <dict>
@@ -2065,7 +2068,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#fab387</string>
+            <string>${palette.peach}</string>
           </dict>
         </dict>
         <dict>
@@ -2074,7 +2077,7 @@
           <key>settings</key>
           <dict>
             <key>foreground</key>
-            <string>#f9e2af</string>
+            <string>${palette.yellow}</string>
           </dict>
         </dict>
       </array>

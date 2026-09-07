@@ -1,27 +1,28 @@
 let
+  palette = import ../lib/palette.nix;
   esc = builtins.fromJSON (''"\'' + ''u001b"'');
 in
 {
   "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
   logo.color = {
-    "1" = "#ffd1db";
-    "2" = "#f38ba8";
-    "3" = "#ffd1db";
-    "4" = "#f38ba8";
-    "5" = "#ffd1db";
-    "6" = "#f38ba8";
+    "1" = palette.text;
+    "2" = palette.red;
+    "3" = palette.text;
+    "4" = palette.red;
+    "5" = palette.text;
+    "6" = palette.red;
   };
   display = {
     separator = " │ ";
     color = {
-      keys = "#ffd1db";
-      output = "#f38ba8";
-      separator = "#cba6f7";
+      keys = palette.text;
+      output = palette.red;
+      separator = palette.mauve;
     };
     temp = {
-      green = "#cba6f7";
-      yellow = "#cba6f7";
-      red = "#cba6f7";
+      green = palette.mauve;
+      yellow = palette.mauve;
+      red = palette.mauve;
     };
     percent = {
       type = [
@@ -29,9 +30,9 @@ in
         "num-color"
       ];
       color = {
-        green = "#cba6f7";
-        yellow = "#cba6f7";
-        red = "#cba6f7";
+        green = palette.mauve;
+        yellow = palette.mauve;
+        red = palette.mauve;
       };
     };
     constants = [

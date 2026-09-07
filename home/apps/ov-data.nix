@@ -1,3 +1,6 @@
+let
+  palette = import ../lib/palette.nix;
+in
 {
   General = {
     TabWidth = 4;
@@ -15,82 +18,82 @@
     Style = {
       Alternate.Background = "#242438";
       ColumnHighlight = {
-        Background = "#313244";
+        Background = palette.surface0;
         Reverse = true;
       };
       ColumnRainbow = [
-        { Foreground = "#cdd6f4"; }
-        { Foreground = "#ffd1db"; }
-        { Foreground = "#f38ba8"; }
-        { Foreground = "#cba6f7"; }
-        { Foreground = "#89b4fa"; }
-        { Foreground = "#a6e3a1"; }
-        { Foreground = "#fab387"; }
+        { Foreground = palette.mochaText; }
+        { Foreground = palette.text; }
+        { Foreground = palette.red; }
+        { Foreground = palette.mauve; }
+        { Foreground = palette.blue; }
+        { Foreground = palette.green; }
+        { Foreground = palette.peach; }
       ];
       Header = {
-        Foreground = "#ffd1db";
+        Foreground = palette.text;
         Bold = true;
       };
       HeaderBorder = {
-        Foreground = "#cba6f7";
+        Foreground = palette.mauve;
         Underline = true;
       };
       JumpTargetLine = {
-        Foreground = "#f38ba8";
+        Foreground = palette.red;
         Underline = true;
         Bold = true;
       };
       LineNumber = {
-        Foreground = "#7f849c";
+        Foreground = palette.overlay1;
         Bold = true;
       };
       MarkLine = {
-        Foreground = "#ffd1db";
-        Background = "#313244";
+        Foreground = palette.text;
+        Background = palette.surface0;
         Bold = true;
       };
       MultiColorHighlight = [
         {
-          Foreground = "#ffd1db";
+          Foreground = palette.text;
           Bold = true;
         }
         {
-          Foreground = "#f38ba8";
+          Foreground = palette.red;
           Bold = true;
         }
         {
-          Foreground = "#cba6f7";
+          Foreground = palette.mauve;
           Bold = true;
         }
-        { Foreground = "#89b4fa"; }
-        { Foreground = "#a6e3a1"; }
-        { Foreground = "#fab387"; }
-        { Foreground = "#94e2d5"; }
+        { Foreground = palette.blue; }
+        { Foreground = palette.green; }
+        { Foreground = palette.peach; }
+        { Foreground = palette.teal; }
       ];
       Ruler = {
-        Foreground = "#9399b2";
-        Background = "#313244";
+        Foreground = palette.overlay2;
+        Background = palette.surface0;
         Bold = true;
       };
       SearchHighlight = {
-        Foreground = "#cdd6f4";
+        Foreground = palette.mochaText;
         Background = "#3e5767";
         Bold = true;
         Reverse = true;
       };
       SectionLine = {
-        Foreground = "#cba6f7";
-        Background = "#313244";
+        Foreground = palette.mauve;
+        Background = palette.surface0;
         Bold = true;
       };
       LeftStatus = {
-        Foreground = "#1e1e2e";
-        Background = "#cba6f7";
+        Foreground = palette.mochaBase;
+        Background = palette.mauve;
         Bold = true;
       };
       RightStatus = {
-        Foreground = "#cdd6f4";
-        Background = "#313244";
+        Foreground = palette.mochaText;
+        Background = palette.surface0;
       };
     };
   };

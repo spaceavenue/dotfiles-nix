@@ -27,6 +27,7 @@ import sys
 import tempfile
 from dataclasses import dataclass
 from datetime import datetime
+from functools import lru_cache
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -41,15 +42,12 @@ def run(cmd: list[str], **kwargs) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, cwd=REPO_ROOT, **kwargs)
 
 
+@lru_cache
 def nix_build_out_path(installable: str) -> Path:
-    # only stdout (the path) is captured, stderr still streams live
-    result = subprocess.run(
-        ["nix", "build", "--no-link", "--print-out-paths", installable],
-        cwd=REPO_ROOT,
-        stdout=subprocess.PIPE,
-        text=True,
-        check=True,
-    )
+    # only stdout (the path) is captured, stderr still streams live. cached
+    # since rusty-wl-utils and rustclip share a toolchain (rustNightlyMuslPlatform)
+    # and all three targets share the same stdenv.cc - no need to rebuild/refetch twice.
+    result = run(["nix", "build", "--no-link", "--print-out-paths", installable], stdout=subprocess.PIPE, text=True, check=True)
     return Path(result.stdout.strip().splitlines()[-1])
 
 

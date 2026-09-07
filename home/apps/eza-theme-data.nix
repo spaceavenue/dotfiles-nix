@@ -1,83 +1,86 @@
+let
+  palette = import ../lib/palette.nix;
+in
 {
   colourful = true;
 
   filekinds = {
     normal = {
-      foreground = "#ffabab";
+      foreground = palette.salmon;
     };
     directory = {
-      foreground = "#ffd1db";
+      foreground = palette.text;
     };
     symlink = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
 
     block_device = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     char_device = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
 
     pipe = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     socket = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
 
     executable = {
-      foreground = "#fab387";
+      foreground = palette.peach;
     };
 
     mount_point = {
       foreground = "#ababff";
     };
     special = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
   };
 
   file_type = {
     image = {
-      foreground = "#ffd1db";
+      foreground = palette.text;
     };
     video = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
 
     music = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     lossless = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
 
     document = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
     compressed = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
 
     crypto = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
     temp = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
 
     compiled = {
-      foreground = "#a6e3a1";
+      foreground = palette.green;
     };
     source = {
-      foreground = "#eba0ac";
+      foreground = palette.maroon;
     };
   };
 
   perms = {
     user_read = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
       is_bold = true;
     };
     group_read = {
@@ -88,7 +91,7 @@
     };
 
     user_write = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
       is_bold = true;
     };
     group_write = {
@@ -99,11 +102,11 @@
     };
 
     user_execute_file = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
       is_bold = true;
     };
     user_execute_other = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
       is_bold = true;
     };
     group_execute = {
@@ -114,178 +117,178 @@
     };
 
     special_user_file = {
-      foreground = "#f5c2e7";
+      foreground = palette.pink;
     };
     special_other = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
     attribute = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
   };
 
   size = {
     major = {
-      foreground = "#ac798a";
+      foreground = palette.subtext;
     };
     minor = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
 
     number_byte = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     number_kilo = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     number_mega = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     number_giga = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     number_huge = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
 
     unit_byte = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     unit_kilo = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     unit_mega = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     unit_giga = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     unit_huge = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
   };
 
   users = {
     user_you = {
-      foreground = "#f5c2e7";
+      foreground = palette.pink;
     };
     user_root = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     user_other = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
 
     group_yours = {
-      foreground = "#f5c2e7";
+      foreground = palette.pink;
     };
     group_root = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     group_other = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
   };
 
   links = {
     normal = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
     multi_link_file = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
   };
 
   git = {
     new = {
-      foreground = "#a6e3a1";
+      foreground = palette.green;
     };
     modified = {
-      foreground = "#fab387";
+      foreground = palette.peach;
     };
     deleted = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
     renamed = {
-      foreground = "#89b4fa";
+      foreground = palette.blue;
     };
     typechange = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     ignored = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
     conflicted = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
       is_bold = true;
     };
   };
 
   git_repo = {
     branch_main = {
-      foreground = "#ffd1db";
+      foreground = palette.text;
     };
     branch_other = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     git_clean = {
-      foreground = "#a6e3a1";
+      foreground = palette.green;
     };
     git_dirty = {
-      foreground = "#f38ba8";
+      foreground = palette.red;
     };
   };
 
   security_context = {
     colon = {
-      foreground = "#cc99aa";
+      foreground = palette.muted;
     };
     user = {
-      foreground = "#ffd1db";
+      foreground = palette.text;
     };
     role = {
-      foreground = "#cba6f7";
+      foreground = palette.mauve;
     };
     typ = {
-      foreground = "#7f849c";
+      foreground = palette.overlay1;
     };
     range = {
-      foreground = "#f5c2e7";
+      foreground = palette.pink;
     };
   };
 
   header = {
-    foreground = "#cba6f7";
+    foreground = palette.mauve;
   };
   date = {
     foreground = "#ddaabb";
   };
   punctuation = {
-    foreground = "#cc99aa";
+    foreground = palette.muted;
   };
   inode = {
-    foreground = "#cc99aa";
+    foreground = palette.muted;
   };
   blocks = {
-    foreground = "#cc99aa";
+    foreground = palette.muted;
   };
   octal = {
-    foreground = "#f38ba8";
+    foreground = palette.red;
   };
   flags = {
-    foreground = "#89b4fa";
+    foreground = palette.blue;
   };
 
   symlink_path = {
-    foreground = "#89b4fa";
+    foreground = palette.blue;
   };
   control_char = {
-    foreground = "#ffd1db";
+    foreground = palette.text;
   };
   broken_symlink = {
-    foreground = "#f38ba8";
+    foreground = palette.red;
   };
   broken_path_overlay = {
-    foreground = "#cc99aa";
+    foreground = palette.muted;
   };
 }

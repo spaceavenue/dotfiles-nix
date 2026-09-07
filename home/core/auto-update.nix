@@ -1,7 +1,12 @@
 # Periodic self-update for the flake: bump inputs, regenerate the build-std
 # Cargo.lock files, auto-patches stale fixed-output-derivation hashes
 # anywhere under pkgs/ using pkgs/auto-update.py.
-{ config, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 let
   repoRoot = "${config.home.homeDirectory}/.config/nixos";
@@ -13,7 +18,13 @@ in
       Type = "oneshot";
       ExecStart = pkgs.writeShellScript "nix-auto-update" ''
         set -uo pipefail
-        export PATH="${pkgs.git}/bin:${pkgs.nix}/bin:${pkgs.python3}/bin:$PATH"
+        export PATH="${
+          lib.makeBinPath [
+            pkgs.git
+            pkgs.nix
+            pkgs.python3
+          ]
+        }:$PATH"
 
         if ${repoRoot}/pkgs/auto-update.py; then
           if ${pkgs.git}/bin/git -C ${repoRoot} diff --quiet; then
