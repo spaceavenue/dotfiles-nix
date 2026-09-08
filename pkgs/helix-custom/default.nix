@@ -1,6 +1,7 @@
 {
   lib,
   rustPlatform,
+  fetchFromGitHub,
   runCommand,
   installShellFiles,
   makeBinaryWrapper,
@@ -9,9 +10,11 @@
 }:
 
 let
-  src = builtins.fetchGit {
-    url = "https://github.com/helix-editor/helix.git";
-    ref = "master";
+  src = fetchFromGitHub {
+    owner = "helix-editor";
+    repo = "helix";
+    rev = "master";
+    hash = "sha256-IYDL6Vnf13Sa+wbeXZTAxvdLA4h8Ew5ha0spcJy/Yk0=";
   };
 
   languages = builtins.fromTOML (builtins.readFile "${src}/languages.toml");
@@ -39,11 +42,13 @@ let
 in
 rustPlatform.buildRustPackage {
   pname = "helix-custom";
-  version = "unstable-${src.shortRev}";
+  version = "unstable";
 
   inherit src;
 
-  cargoLock.lockFile = "${src}/Cargo.lock";
+  cargoLock.lockFile = ./Cargo.lock;
+
+  postPatch = "cp ${./Cargo.lock} Cargo.lock";
 
   nativeBuildInputs = [
     installShellFiles

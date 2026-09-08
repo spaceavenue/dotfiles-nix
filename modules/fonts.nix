@@ -11,7 +11,11 @@
   fonts.fontconfig = {
     enable = true;
     defaultFonts = {
+      serif = [ "Iosevka Etoile" ];
+      sansSerif = [ "Iosevka Aile" ];
+      monospace = [ "Iosevka SS06" ];
       emoji = [ "Twitter Color Emoji" ];
     };
+    subpixel.rgba = "rgb";
   };
 }
